@@ -140,15 +140,15 @@ export const CorporateHero: React.FC = () => {
               {/* CTAs */}
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <a
-                  href="#contacto"
-                  className="px-6 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all flex items-center gap-2"
+                  href="/contacto"
+                  className="px-6 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all flex items-center gap-2 cursor-pointer"
                 >
                   <span>Solicitar Propuesta para este Perfil</span>
                   <ChevronRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="#productos"
-                  className="px-5 py-3 rounded-lg bg-white border border-slate-300 hover:border-slate-400 text-slate-700 font-bold text-xs uppercase tracking-wider transition-all"
+                  href="/calidad-y-proceso"
+                  className="px-5 py-3 rounded-lg bg-white border border-slate-300 hover:border-slate-400 text-slate-700 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer"
                 >
                   Ver Fichas Técnicas
                 </a>

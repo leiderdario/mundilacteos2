@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useCorporateLanguage } from "@/context/LanguageContext";
 import { corporateConfig } from "@/config/site";
 import { MapPin, Phone, Mail, ShieldCheck, Globe } from "lucide-react";
@@ -13,25 +14,16 @@ export const CorporateFooter: React.FC = () => {
     <footer className="bg-[#0B2545] text-white pt-16 pb-12 border-t border-[#13315C]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-700/80">
-          {/* Column 1: Corporate Identity & Slogan */}
+          {/* Column 1: Corporate Identity & Slogan with Authentic Logo */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center">
+            <div className="flex items-center">
+              <div className="relative w-48 sm:w-56 h-12 bg-white/95 rounded-2xl px-3 py-1 flex items-center shadow-md">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-mundilacteos-full.png"
                   alt="Inversiones Mundilácteos S.A.S"
-                  width={38}
-                  height={38}
-                  className="object-contain"
+                  fill
+                  className="object-contain p-1.5"
                 />
-              </div>
-              <div>
-                <span className="text-lg font-black tracking-tight text-white block leading-none">
-                  MUNDI<span className="text-emerald-400 font-normal">LÁCTEOS</span>
-                </span>
-                <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                  Inversiones Mundilácteos S.A.S
-                </span>
               </div>
             </div>
 
@@ -45,18 +37,18 @@ export const CorporateFooter: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Navigation Links */}
           <div className="lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
               Estructura Corporativa
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><a href="#quienes-somos" className="hover:text-emerald-400 transition-colors">{t("navWhoWeAre")}</a></li>
-              <li><a href="#compromisos" className="hover:text-emerald-400 transition-colors">{t("navCommitments")}</a></li>
-              <li><a href="#cadena-valor" className="hover:text-emerald-400 transition-colors">{t("navSupplyChain")}</a></li>
-              <li><a href="#productos" className="hover:text-emerald-400 transition-colors">{t("navProducts")}</a></li>
-              <li><a href="#alianzas" className="hover:text-emerald-400 transition-colors">{t("navImpact")}</a></li>
-              <li><a href="#contacto" className="hover:text-emerald-400 transition-colors">{t("navContact")}</a></li>
+              <li><Link href="/" className="hover:text-emerald-400 transition-colors">{t("navWhoWeAre")}</Link></li>
+              <li><Link href="/#compromisos" className="hover:text-emerald-400 transition-colors">{t("navCommitments")}</Link></li>
+              <li><Link href="/#productos" className="hover:text-emerald-400 transition-colors">{t("navProducts")}</Link></li>
+              <li><Link href="/calidad-y-proceso" className="hover:text-emerald-400 transition-colors">Calidad y Proceso</Link></li>
+              <li><Link href="/aliados" className="hover:text-emerald-400 transition-colors">Aliados Comerciales</Link></li>
+              <li><Link href="/contacto" className="hover:text-emerald-400 transition-colors">Contacto Comercial</Link></li>
             </ul>
           </div>
 
@@ -101,7 +93,7 @@ export const CorporateFooter: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setLanguage("es")}
-                className={`hover:text-white ${language === "es" ? "text-emerald-400 font-bold" : ""}`}
+                className={`hover:text-white cursor-pointer ${language === "es" ? "text-emerald-400 font-bold" : ""}`}
               >
                 Español
               </button>
@@ -109,7 +101,7 @@ export const CorporateFooter: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setLanguage("en")}
-                className={`hover:text-white ${language === "en" ? "text-emerald-400 font-bold" : ""}`}
+                className={`hover:text-white cursor-pointer ${language === "en" ? "text-emerald-400 font-bold" : ""}`}
               >
                 English
               </button>
